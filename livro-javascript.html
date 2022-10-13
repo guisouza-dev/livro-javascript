@@ -5,121 +5,177 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>JavaScript Básico</title>
+  
+  <!-- ===== CSS ===== -->
   <link rel="stylesheet" href="styles/style.css" media="screen">
+  <link rel="stylesheet" href="styles/media-query.css" media="screen and ">
   <link rel="stylesheet" href="styles/print.css" media="print">
+
+  <!-- ===== Boxicons CSS ===== -->
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
 </head>
 <body>
+  <nav class="sidebar close">
+    <header>
+      <div class="image-text">
+        <span class="image">
+          <img src="src/logo.png" alt="Logo JavaScript">
+        </span>
+
+        <div class="text header-text">
+          <span class="name">Guilherme</span>
+          <span class="profession">Web Developer</span>
+        </div>
+      </div>
+
+      <i class='bx bx-chevron-right toggle' ></i>
+    </header>
+
+    <div class="menu-bar">
+      <div class="menu">
+        <li class="search-box">
+            <i class='bx bx-search icon' ></i>
+            <input type="search" placeholder="Search...">
+        </li>
+        <ul class="menu-links">
+          <li class="nav-link">
+            <a href="#">
+              <i class='bx bx-home-alt icon' ></i>
+              <span class="text nav-text">Início</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="bottom-content">
+        <li class="mode">
+          <div class="moon-sun">
+            <i class='bx bx-moon icon moon' ></i>
+            <i class='bx bx-sun icon sun' ></i>
+          </div>
+          <span class="mode-text text">Dark Mode</span>
+
+          <div class="toggle-switch">
+            <span class="switch"></span>
+
+          </div>
+        </li>
+
+      </div>
+    </div>
+  </nav>
+  
   <div id="center">
     <h1>JavaScript Básico</h1>
     <h2 class="atx" id="sumario">Sumário</h2>
     <ul>
-    <li><a href="#comentar-seu-codigo-javascript">Comentar seu código JavaScript</a></li>
-    <li><a href="#declarar-variaveis-javascript">Declarar variáveis JavaScript</a></li>
-    <li><a href="#armazenar-valores-com-o-operador-de-atribuicao">Armazenar valores com o operador de atribuição</a></li>
-    <li><a href="#atribuir-o-valor-de-uma-variavel-para-outra">Atribuir o valor de uma variável para outra</a></li>
-    <li><a href="#inicializar-variaveis-com-o-operador-de-atribuicao">Inicializar variáveis com o operador de atribuição</a></li>
-    <li><a href="#declarar-variaveis-de-string">Declarar variáveis de string</a></li>
-    <li><a href="#entender-variaveis-nao-inicializadas">Entender variáveis não inicializadas</a></li>
-    <li><a href="#entender-a-sensibilidade-a-caracteres-maiusculos-e-minusculos-em-variaveis">Entender a sensibilidade a caracteres maiúsculos e minúsculos em variáveis</a></li>
-    <li><a href="#diferenciar-entre-as-palavras-chave-var-e-let">Diferenciar entre as palavras-chave var e let</a></li>
-    <li><a href="#declarar-variaveis-somente-de-leitura-com-a-palavra-chave-const">Declarar variáveis somente de leitura com a palavra-chave const</a></li>
-    <li><a href="#adicionar-dois-numeros-com-javascript">Adicionar dois números com JavaScript</a></li>
-    <li><a href="#subtrair-um-numero-de-outro-com-javascript">Subtrair um número de outro com JavaScript</a></li>
-    <li><a href="#multiplicar-dois-numeros-com-javascript">Multiplicar dois números com JavaScript</a></li>
-    <li><a href="#dividir-um-numero-por-outro-com-javascript">Dividir um número por outro com JavaScript</a></li>
-    <li><a href="#incrementar-um-numero-com-javascript">Incrementar um número com JavaScript</a></li>
-    <li><a href="#decrementar-um-numero-com-javascript">Decrementar um número com JavaScript</a></li>
-    <li><a href="#criar-numeros-decimais-com-javascript">Criar números decimais com JavaScript</a></li>
-    <li><a href="#multiplicar-dois-decimais-com-javascript">Multiplicar dois decimais com JavaScript</a></li>
-    <li><a href="#dividir-um-decimal-por-outro-com-javascript">Dividir um decimal por outro com JavaScript</a></li>
-    <li><a href="#descobrir-o-resto-em-javascript">Descobrir o resto em JavaScript</a></li>
-    <li><a href="#atribuir-de-modo-composto-com-adicao-aumentada">Atribuir de modo composto com adição aumentada</a></li>
-    <li><a href="#atribuir-de-modo-composto-com-subtracao-aumentada">Atribuir de modo composto com subtração aumentada</a></li>
-    <li><a href="#atribuir-de-modo-composto-com-multiplicacao-aumentada">Atribuir de modo composto com multiplicação aumentada</a></li>
-    <li><a href="#atribuir-de-modo-composto-com-divisao-aumentada">Atribuir de modo composto com divisão aumentada</a></li>
-    <li><a href="#escapar-aspas-literais-em-strings">Escapar aspas literais em strings</a></li>
-    <li><a href="#cercar-uma-string-com-aspas-simples">Cercar uma string com aspas simples</a></li>
-    <li><a href="#escapar-sequencias-em-strings">Escapar sequências em strings</a></li>
-    <li><a href="#concatenar-strings-com-o-operador-mais">Concatenar strings com o operador mais</a></li>
-    <li><a href="#concatenar-strings-com-o-operador-mais-igual">Concatenar strings com o operador mais igual</a></li>
-    <li><a href="#criar-strings-com-variaveis">Criar strings com variáveis</a></li>
-    <li><a href="#adicionar-variaveis-para-strings">Adicionar variáveis para strings</a></li>
-    <li><a href="#encontrar-o-tamanho-de-uma-string">Encontrar o tamanho de uma string</a></li>
-    <li><a href="#usar-notacao-de-colchetes-para-encontrar-o-primeiro-caractere-em-uma-string">Usar notação de colchetes para encontrar o primeiro caractere em uma string</a></li>
-    <li><a href="#estender-a-imutabilidade-das-strings">Entender a imutabilidade das strings</a></li>
-    <li><a href="#usar-notacao-de-colchetes-para-encontrar-o-enesimo-caractere-em-uma-string">Usar notação de colchetes para encontrar o enésimo caractere em uma string</a></li>
-    <li><a href="#usar-notacao-de-colchetes-para-encontrar-o-ultimo-caractere-em-uma-string">Usar notação de colchetes para encontrar o último caractere em uma string</a></li>
-    <li><a href="#usar-notacao-de-colchetes-para-descobrir-o-enesimo-caractere-antes-do-ultimo-em-uma-string">Usar notação de colchetes para descobrir o enésimo caractere antes do último em uma string</a></li>
-    <li><a href="#preencher-espacos-em-branco">Preencher espaços em branco</a></li>
-    <li><a href="#armazenar-multiplos-valores-em-uma-variavel-usando-arrays-javascript">Armazenar múltiplos valores em uma variável usando arrays JavaScript</a></li>
-    <li><a href="#aninhar-um-array-em-outro-array">Aninhar um array em outro array</a></li>
-    <li><a href="#acessar-array-de-dados-com-indices">Acessar array de dados com índices</a></li>
-    <li><a href="#modificar-dados-de-array-com-indices">Modificar dados de array com índices</a></li>
-    <li><a href="#acessar-arrays-multidimensionais-com-indices">Acessar arrays multidimensionais com índices</a></li>
-    <li><a href="#manipular-arrays-com-push">Manipular arrays com push()</a></li>
-    <li><a href="#manipular-arrays-com-pop">Manipular arrays com pop()</a></li>
-    <li><a href="#manipular-arrays-com-shift">Manipular arrays com shift()</a></li>
-    <li><a href="#manipular-arrays-com-unshift">Manipular arrays com unshift()</a></li>
-    <li><a href="#criar-lista-de-compras">Criar lista de compras</a></li>
-    <li><a href="#escrever-javascript-reutilizavel-com-funcoes">Escrever JavaScript reutilizável com funções</a></li>
-    <li><a href="#passar-valores-para-funcoes-com-argumentos">Passar valores para funções com argumentos</a></li>
-    <li><a href="#retornar-um-valor-de-uma-funcao-com-return">Retornar um valor de uma função com return</a></li>
-    <li><a href="#conhecer-o-escopo-global-e-funcoes">Conhecer o escopo global e funções</a></li>
-    <li><a href="#conhecer-o-escopo-local-e-funcoes">Conhecer o escopo local e funções</a></li>
-    <li><a href="#diferenciar-escopo-global-e-local-em-funcoes">Diferenciar escopo global e local em funções</a></li>
-    <li><a href="#entender-o-valor-undefined-retornado-de-uma-funcao">Entender o valor undefined retornado de uma função</a></li>
-    <li><a href="#atribuir-com-valor-retornado">Atribuir com o valor retornado</a></li>
-    <li><a href="#ficar-na-linha">Ficar na linha</a></li>
-    <li><a href="#entender-valores-booleanos">Entender valores booleanos</a></li>
-    <li><a href="#usar-logica-condicional-com-instrucoes-if">Usar lógica condicional com instruções if</a></li>
-    <li><a href="#comparar-com-o-operador-de-igualdade">Comparar com o operador de igualdade</a></li>
-    <li><a href="#comparar-com-o-operador-de-igualdade-estrita">Comparar com o operador de igualdade estrita</a></li>
-    <li><a href="#praticar-a-comparacao-de-diferentes-valores">Praticar a comparação de diferentes valores</a></li>
-    <li><a href="#comparar-com-o-operador-de-desigualdade">Comparar com o operador de desigualdade</a></li>
-    <li><a href="#comparar-com-o-operador-de-desigualdade-estrita">Comparar com o operador de desigualdade estrita</a></li>
-    <li><a href="#comparar-com-o-operador-maior-que">Comparar com o operador maior que</a></li>
-    <li><a href="#comparar-com-o-operador-maior-ou-igual">Comparar com o operador maior ou igual</a></li>
-    <li><a href="#comparar-com-o-operador-menor-que">Comparar com o operador menor que</a></li>
-    <li><a href="#comparar-com-o-operador-menor-ou-igual">Comparar com o operador menor ou igual</a></li>
-    <li><a href="#comparar-com-o-operador-logico-and">Comparar com o operador lógico AND</a></li>
-    <li><a href="#comparar-com-o-operador-logico-or">Comparar com o operador lógico OR</a></li>
-    <li><a href="#introduzir-instrucoes-else">Introduzir instruções else</a></li>
-    <li><a href="#introduzir-instrucoes-else-if">Introduzir instruções else if</a></li>
-    <li><a href="#usar-a-ordem-logica-em-instrucoes-if-else">Usar a ordem lógica em instruções if else</a></li>
-    <li><a href="#encadear-instrucoes-if-else">Encadear instruções if else</a></li>
-    <li><a href="#selecionar-entre-varias-opcoes-com-instrucoes-switch">Selecionar entre várias opções com instruções switch</a></li>
-    <li><a href="#adicionar-uma-opcao-padrao-em-instrucoes-switch">Adicionar uma opção padrão em instruções switch</a></li>
-    <li><a href="#lidar-com-opcoes-identicas-em-instrucoes-switch">Lidar com várias opções idênticas em instruções switch</a></li>
-    <li><a href="#substituir-cadeias-de-if-else-por-switch">Substituir cadeias de if else por switch</a></li>
-    <li><a href="#retornar-valores-booleanos-das-funcoes">Retornar valores booleanos das funções</a></li>
-    <li><a href="#retornar-o-padrao-inicial-para-funcoes">Retornar o padrão inicial para funções</a></li>
-    <li><a href="#criar-objetos-javascript">Criar objetos JavaScript</a></li>
-    <li><a href="#acessar-propriedades-de-objetos-com-notacao-de-pontos">Acessar propriedades de objetos com notação de pontos</a></li>
-    <li><a href="#acessar-propriedades-de-objeto-com-notacao-de-colchetes">Acessar propriedades de objeto com notação de colchetes</a></li>
-    <li><a href="#acessar-propriedades-de-objetos-com-variaveis">Acessar propriedades de objetos com variáveis</a></li>
-    <li><a href="#atualizar-propriedades-do-objeto">Atualizar propriedades do objeto</a></li>
-    <li><a href="#adicionar-novas-propriedades-para-um-objeto-javascript">Adicionar novas propriedades para um objeto JavaScript</a></li>
-    <li><a href="#excluir-propriedades-de-um-objeto-javascript">Excluir propriedades de um objeto JavaScript</a></li>
-    <li><a href="#usar-objetos-para-pesquisas">Usar objetos para pesquisas</a></li>
-    <li><a href="#testar-objetos-por-propriedades">Testar objetos por propriedades</a></li>
-    <li><a href="#manipular-objetos-complexos">Manipular objetos complexos</a></li>
-    <li><a href="#acessar-objetos-aninhados">Acessar objetos aninhados</a></li>
-    <li><a href="#acessar-arrays-aninhados">Acessar arrays aninhados</a></li>
-    <li><a href="#iterar-com-lacos-while-em-javascript">Iterar com laços while em JavaScript</a></li>
-    <li><a href="#iterar-com-lacos-for-em-javascript">Iterar com laços for em JavaScript</a></li>
-    <li><a href="#iterar-numeros-impares-com-um-laco-for">Iterar números ímpares com um laço for</a></li>
-    <li><a href="#contar-para-tras-com-um-laco-for">Contar para trás com um laço for</a></li>
-    <li><a href="#iterar-atraves-de-um-array-com-laco-for">Iterar através de um array com laço for</a></li>
-    <li><a href="#aninhar-lacos-for">Aninhar laços for</a></li>
-    <li><a href="#iterar-com-lacos-dowhile-em-javascript">Iterar com laços do...while em JavaScript</a></li>
-    <li><a href="#substituir-lacos-usando-recursao">Substituir laços usando recursão</a></li>
-    <li><a href="#gerar-fracoes-aleatorias-com-javascript">Gerar frações aleatórias com JavaScript</a></li>
-    <li><a href="#gerar-numeros-inteiros-aleatorios-com-javascript">Gerar números inteiros aleatórios com JavaScript</a></li>
-    <li><a href="#gerar-numeros-inteiros-aleatorios-dentro-de-um-intervalo">Gerar números inteiros aleatórios dentro de um intervalo</a></li>
-    <li><a href="#usar-a-funcao-parseint">Usar a função parseInt</a></li>
-    <li><a href="#usar-a-funcao-parseint-com-um-radix">Usar a função parseInt com um radix</a></li>
-    <li><a href="#usar-o-operador-condicional-ternario">Usar o operador condicional (ternário)</a></li>
-    <li><a href="#usar-operadores-de-multiplas-condicoes-ternarios">Usar operadores de múltiplas condições (ternários)</a></li>
+      <li class="nav-link"><a href="#comentar-seu-codigo-javascript">Comentar seu código JavaScript</a></li>
+      <li class="nav-link"><a href="#declarar-variaveis-javascript">Declarar variáveis JavaScript</a></li>
+      <li class="nav-link"><a href="#armazenar-valores-com-o-operador-de-atribuicao">Armazenar valores com o operador de atribuição</a></li>
+      <li class="nav-link"><a href="#atribuir-o-valor-de-uma-variavel-para-outra">Atribuir o valor de uma variável para outra</a></li>
+      <li class="nav-link"><a href="#inicializar-variaveis-com-o-operador-de-atribuicao">Inicializar variáveis com o operador de atribuição</a></li>
+      <li class="nav-link"><a href="#declarar-variaveis-de-string"class="nav-link">Declarar variáveis de string</a></li>
+      <li class="nav-link"><a href="#entender-variaveis-nao-inicializadas">Entender variáveis não inicializadas</a></li>
+      <li class="nav-link"><a href="#entender-a-sensibilidade-a-caracteres-maiusculos-e-minusculos-em-variaveis">Entender a sensibilidade a caracteres maiúsculos e minúsculos em variáveis</a></li>
+      <li class="nav-link"><a href="#diferenciar-entre-as-palavras-chave-var-e-let">Diferenciar entre as palavras-chave var e let</a></li>
+      <li class="nav-link"><a href="#declarar-variaveis-somente-de-leitura-com-a-palavra-chave-const">Declarar variáveis somente de leitura com a palavra-chave const</a></li>
+      <li class="nav-link"><a href="#adicionar-dois-numeros-com-javascript">Adicionar dois números com JavaScript</a></li>
+      <li class="nav-link"><a href="#subtrair-um-numero-de-outro-com-javascript">Subtrair um número de outro com JavaScript</a></li>
+      <li class="nav-link"><a href="#multiplicar-dois-numeros-com-javascript">Multiplicar dois números com JavaScript</a></li>
+      <li class="nav-link"><a href="#dividir-um-numero-por-outro-com-javascript">Dividir um número por outro com JavaScript</a></li>
+      <li class="nav-link"><a href="#incrementar-um-numero-com-javascript">Incrementar um número com JavaScript</a></li>
+      <li class="nav-link"><a href="#decrementar-um-numero-com-javascript">Decrementar um número com JavaScript</a></li>
+      <li class="nav-link"><a href="#criar-numeros-decimais-com-javascript">Criar números decimais com JavaScript</a></li>
+      <li class="nav-link"><a href="#multiplicar-dois-decimais-com-javascript">Multiplicar dois decimais com JavaScript</a></li>
+      <li class="nav-link"><a href="#dividir-um-decimal-por-outro-com-javascript">Dividir um decimal por outro com JavaScript</a></li>
+      <li class="nav-link"><a href="#descobrir-o-resto-em-javascript"class="nav-link">Descobrir o resto em JavaScript</a></li>
+      <li class="nav-link"><a href="#atribuir-de-modo-composto-com-adicao-aumentada">Atribuir de modo composto com adição aumentada</a></li>
+      <li class="nav-link"><a href="#atribuir-de-modo-composto-com-subtracao-aumentada">Atribuir de modo composto com subtração aumentada</a></li>
+      <li class="nav-link"><a href="#atribuir-de-modo-composto-com-multiplicacao-aumentada">Atribuir de modo composto com multiplicação aumentada</a></li>
+      <li class="nav-link"><a href="#atribuir-de-modo-composto-com-divisao-aumentada">Atribuir de modo composto com divisão aumentada</a></li>
+      <li class="nav-link"><a href="#escapar-aspas-literais-em-strings">Escapar aspas literais em strings</a></li>
+      <li class="nav-link"><a href="#cercar-uma-string-com-aspas-simples">Cercar uma string com aspas simples</a></li>
+      <li class="nav-link"><a href="#escapar-sequencias-em-strings">Escapar sequências em strings</a></li>
+      <li class="nav-link"><a href="#concatenar-strings-com-o-operador-mais">Concatenar strings com o operador mais</a></li>
+      <li class="nav-link"><a href="#concatenar-strings-com-o-operador-mais-igual">Concatenar strings com o operador mais igual</a></li>
+      <li class="nav-link"><a href="#criar-strings-com-variaveis">Criar strings com variáveis</a></li>
+      <li class="nav-link"><a href="#adicionar-variaveis-para-strings">Adicionar variáveis para strings</a></li>
+      <li class="nav-link"><a href="#encontrar-o-tamanho-de-uma-string">Encontrar o tamanho de uma string</a></li>
+      <li class="nav-link"><a href="#usar-notacao-de-colchetes-para-encontrar-o-primeiro-caractere-em-uma-string">Usar notação de colchetes para encontrar o primeiro caractere em uma string</a></li>
+      <li class="nav-link"><a href="#estender-a-imutabilidade-das-strings"class="nav-link">Entender a imutabilidade das strings</a></li>
+      <li class="nav-link"><a href="#usar-notacao-de-colchetes-para-encontrar-o-enesimo-caractere-em-uma-string">Usar notação de colchetes para encontrar o enésimo caractere em uma string</a></li>
+      <li class="nav-link"><a href="#usar-notacao-de-colchetes-para-encontrar-o-ultimo-caractere-em-uma-string">Usar notação de colchetes para encontrar o último caractere em uma string</a></li>
+      <li class="nav-link"><a href="#usar-notacao-de-colchetes-para-descobrir-o-enesimo-caractere-antes-do-ultimo-em-uma-string">Usar notação de colchetes para descobrir o enésimo caractere antes do último em uma string</a></li>
+      <li class="nav-link"><a href="#preencher-espacos-em-branco">Preencher espaços em branco</a></li>
+      <li class="nav-link"><a href="#armazenar-multiplos-valores-em-uma-variavel-usando-arrays-javascript">Armazenar múltiplos valores em uma variável usando arrays JavaScript</a></li>
+      <li class="nav-link"><a href="#aninhar-um-array-em-outro-array">Aninhar um array em outro array</a></li>
+      <li class="nav-link"><a href="#acessar-array-de-dados-com-indices">Acessar array de dados com índices</a></li>
+      <li class="nav-link"><a href="#modificar-dados-de-array-com-indices">Modificar dados de array com índices</a></li>
+      <li class="nav-link"><a href="#acessar-arrays-multidimensionais-com-indices">Acessar arrays multidimensionais com índices</a></li>
+      <li class="nav-link"><a href="#manipular-arrays-com-push">Manipular arrays com push()</a></li>
+      <li class="nav-link"><a href="#manipular-arrays-com-pop">Manipular arrays com pop()</a></li>
+      <li class="nav-link"><a href="#manipular-arrays-com-shift">Manipular arrays com shift()</a></li>
+      <li class="nav-link"><a href="#manipular-arrays-com-unshift">Manipular arrays com unshift()</a></li>
+      <li class="nav-link"><a href="#escrever-javascript-reutilizavel-com-funcoes">Escrever JavaScript reutilizável com funções</a></li>
+      <li class="nav-link"><a href="#passar-valores-para-funcoes-com-argumentos">Passar valores para funções com argumentos</a></li>
+      <li class="nav-link"><a href="#retornar-um-valor-de-uma-funcao-com-return">Retornar um valor de uma função com return</a></li>
+      <li class="nav-link"><a href="#conhecer-o-escopo-global-e-funcoes">Conhecer o escopo global e funções</a></li>
+      <li class="nav-link"><a href="#conhecer-o-escopo-local-e-funcoes">Conhecer o escopo local e funções</a></li>
+      <li class="nav-link"><a href="#diferenciar-escopo-global-e-local-em-funcoes">Diferenciar escopo global e local em funções</a></li>
+      <li class="nav-link"><a href="#entender-o-valor-undefined-retornado-de-uma-funcao">Entender o valor undefined retornado de uma função</a></li>
+      <li class="nav-link"><a href="#atribuir-com-valor-retornado">Atribuir com o valor retornado</a></li>
+      <li class="nav-link"><a href="#ficar-na-linha">Ficar na linha</a></li>
+      <li class="nav-link"><a href="#entender-valores-booleanos">Entender valores booleanos</a></li>
+      <li class="nav-link"><a href="#usar-logica-condicional-com-instrucoes-if">Usar lógica condicional com instruções if</a></li>
+      <li class="nav-link"><a href="#comparar-com-o-operador-de-igualdade">Comparar com o operador de igualdade</a></li>
+      <li class="nav-link"><a href="#comparar-com-o-operador-de-igualdade-estrita">Comparar com o operador de igualdade estrita</a></li>
+      <li><a href="#praticar-a-comparacao-de-diferentes-valores">Praticar a comparação de diferentes valores</a></li>
+      <li class="nav-link"><a href="#comparar-com-o-operador-de-desigualdade">Comparar com o operador de desigualdade</a></li>
+      <li class="nav-link"><a href="#comparar-com-o-operador-de-desigualdade-estrita">Comparar com o operador de desigualdade estrita</a></li>
+      <li class="nav-link"><a href="#comparar-com-o-operador-maior-que">Comparar com o operador maior que</a></li>
+      <li class="nav-link"><a href="#comparar-com-o-operador-maior-ou-igual">Comparar com o operador maior ou igual</a></li>
+      <li class="nav-link"><a href="#comparar-com-o-operador-menor-que">Comparar com o operador menor que</a></li>
+      <li class="nav-link"><a href="#comparar-com-o-operador-menor-ou-igual">Comparar com o operador menor ou igual</a></li>
+      <li class="nav-link"><a href="#comparar-com-o-operador-logico-and">Comparar com o operador lógico AND</a></li>
+      <li class="nav-link"><a href="#comparar-com-o-operador-logico-or">Comparar com o operador lógico OR</a></li>
+      <li class="nav-link"><a href="#introduzir-instrucoes-else">Introduzir instruções else</a></li>
+      <li class="nav-link"><a href="#introduzir-instrucoes-else-if">Introduzir instruções else if</a></li>
+      <li class="nav-link"><a href="#usar-a-ordem-logica-em-instrucoes-if-else">Usar a ordem lógica em instruções if else</a></li>
+      <li class="nav-link"><a href="#encadear-instrucoes-if-else">Encadear instruções if else</a></li>
+      <li class="nav-link"><a href="#selecionar-entre-varias-opcoes-com-instrucoes-switch">Selecionar entre várias opções com instruções switch</a></li>
+      <li class="nav-link"><a href="#adicionar-uma-opcao-padrao-em-instrucoes-switch">Adicionar uma opção padrão em instruções switch</a></li>
+      <li class="nav-link"><a href="#lidar-com-opcoes-identicas-em-instrucoes-switch">Lidar com várias opções idênticas em instruções switch</a></li>
+      <li class="nav-link"><a href="#substituir-cadeias-de-if-else-por-switch">Substituir cadeias de if else por switch</a></li>
+      <li class="nav-link"><a href="#retornar-valores-booleanos-das-funcoes">Retornar valores booleanos das funções</a></li>
+      <li class="nav-link"><a href="#retornar-o-padrao-inicial-para-funcoes">Retornar o padrão inicial para funções</a></li>
+      <li class="nav-link"><a href="#criar-objetos-javascript">Criar objetos JavaScript</a></li>
+      <li class="nav-link"><a href="#acessar-propriedades-de-objetos-com-notacao-de-pontos">Acessar propriedades de objetos com notação de pontos</a></li>
+      <li class="nav-link"><a href="#acessar-propriedades-de-objeto-com-notacao-de-colchetes">Acessar propriedades de objeto com notação de colchetes</a></li>
+      <li class="nav-link"><a href="#acessar-propriedades-de-objetos-com-variaveis">Acessar propriedades de objetos com variáveis</a></li>
+      <li class="nav-link"><a href="#atualizar-propriedades-do-objeto">Atualizar propriedades do objeto</a></li>
+      <li class="nav-link"><a href="#adicionar-novas-propriedades-para-um-objeto-javascript">Adicionar novas propriedades para um objeto JavaScript</a></li>
+      <li class="nav-link"><a href="#excluir-propriedades-de-um-objeto-javascript">Excluir propriedades de um objeto JavaScript</a></li>
+      <li class="nav-link"><a href="#usar-objetos-para-pesquisas">Usar objetos para pesquisas</a></li>
+      <li class="nav-link"><a href="#testar-objetos-por-propriedades">Testar objetos por propriedades</a></li>
+      <li class="nav-link"><a href="#manipular-objetos-complexos">Manipular objetos complexos</a></li>
+      <li class="nav-link"><a href="#acessar-objetos-aninhados">Acessar objetos aninhados</a></li>
+      <li class="nav-link"><a href="#acessar-arrays-aninhados">Acessar arrays aninhados</a></li>
+      <li class="nav-link"><a href="#iterar-com-lacos-while-em-javascript">Iterar com laços while em JavaScript</a></li>
+      <li class="nav-link"><a href="#iterar-com-lacos-for-em-javascript">Iterar com laços for em JavaScript</a></li>
+      <li class="nav-link"><a href="#iterar-numeros-impares-com-um-laco-for">Iterar números ímpares com um laço for</a></li>
+      <li class="nav-link"><a href="#contar-para-tras-com-um-laco-for">Contar para trás com um laço for</a></li>
+      <li class="nav-link"><a href="#iterar-atraves-de-um-array-com-laco-for">Iterar através de um array com laço for</a></li>
+      <li class="nav-link"><a href="#aninhar-lacos-for">Aninhar laços for</a></li>
+      <li class="nav-link"><a href="#iterar-com-lacos-dowhile-em-javascript">Iterar com laços do...while em JavaScript</a></li>
+      <li class="nav-link"><a href="#substituir-lacos-usando-recursao">Substituir laços usando recursão</a></li>
+      <li class="nav-link"><a href="#gerar-fracoes-aleatorias-com-javascript">Gerar frações aleatórias com JavaScript</a></li>
+      <li class="nav-link"><a href="#gerar-numeros-inteiros-aleatorios-com-javascript">Gerar números inteiros aleatórios com JavaScript</a></li>
+      <li class="nav-link"><a href="#gerar-numeros-inteiros-aleatorios-dentro-de-um-intervalo">Gerar números inteiros aleatórios dentro de um intervalo</a></li>
+      <li class="nav-link"><a href="#usar-a-funcao-parseint">Usar a função parseInt</a></li>
+      <li class="nav-link"><a href="#usar-a-funcao-parseint-com-um-radix">Usar a função parseInt com um radix</a></li>
+      <li class="nav-link"><a href="#usar-o-operador-condicional-ternario">Usar o operador condicional (ternário)</a></li>
+      <li class="nav-link"><a href="#usar-operadores-de-multiplas-condicoes-ternarios">Usar operadores de múltiplas condições (ternários)</a></li>
     </ul>
     <hr>
     <h6 class="atx" id="lesscentergreaterjavascript-basico"><center>JavaScript Básico</center></h6>
@@ -1277,6 +1333,8 @@
       }</code></pre>
     </main>
   </div>
+
+  <script src="scripts/script.js"></script>
 
 </body>
 </html>

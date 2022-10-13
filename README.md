@@ -1,4 +1,4 @@
-###### <center>JavaScript Básico</center>
+# <center>JavaScript Básico</center>
 
 ## Comentar seu código JavaScript
 

@@ -42,6 +42,21 @@ body {
     color: var(--text-color);
 }
 
+h1 {
+    padding-top: 30px;
+    margin-bottom: 30px;
+    text-align: center;
+    color: #393532;
+}
+
+h2 {
+    margin: 10px 0;
+}
+
+p {
+    padding: 15px;
+}
+
 body.dark {
     /* ==== Colors ==== */
     --body-color: #18191a;
@@ -58,6 +73,7 @@ code, blockquote {
 
 hr {
     border: 2px dashed rgba(0, 0, 0, 0.197);
+    margin: 20px 0;
 }
 
 div#center {

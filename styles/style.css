@@ -11,12 +11,33 @@ html {
 
 a {
     color: black;
-    text-decoration: underline;
+    text-decoration: none;
     font-family: 'Merriweather', serif;
     font-weight: 500;
+
+    background: 
+    linear-gradient(currentColor 0 0) 
+    bottom /var(--d, 0) 1px 
+    no-repeat;
+    transition:0.5s;}
+
+a:hover {
+    --d: 100%;
+    text-decoration: none;
 }
 
 h2 {
     font-size: 1.5em;
     font-weight: 900;
+}
+
+.basic-3 {
+    background: 
+        linear-gradient(currentColor 0 0) 
+        bottom /var(--d, 0) 3px 
+        no-repeat;
+    transition:0.5s;
+}
+.basic-3:hover {
+    --d: 100%;
 }
